@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>Местная библиотека</title>
+{% endblock %}
+
+{% block content %}
+<h1>Местная библиотека</h1>
+
+  <p>Добро пожаловать на <em>LocalLibrary</em>, небольшой веб-сайт, разработанный в качестве примера для руководства на Mozilla Developer Network.</p>
+
+<h2>Динамический контент</h2>
+
+  <p>Библиотека насчитывает:</p>
+  <ul>
+    <li><strong>Книг:</strong> {{ num_books }}</li>
+    <li><strong>Копий книг:</strong> {{ num_instances }}</li>
+    <li><strong>Доступных копий книг:</strong> {{ num_instances_available }}</li>
+    <li><strong>Авторов:</strong> {{ num_authors }}</li>
+    <li><strong>Жанров:</strong> {{ num_genres }}</li>
+    <li><strong>Книг про Шерлока Холмса:</strong> {{ num_holmes }}</li>
+  </ul>
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+{% endblock %}
