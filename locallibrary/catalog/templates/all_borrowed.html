@@ -10,7 +10,7 @@
 					<a href="{% url 'book-detail' bookinst.book.pk %}">
 						{{ bookinst.book.title }}
 					</a>
-					({{ bookinst.due_back }}) - {{ bookinst.borrower }}
+					({{ bookinst.due_back }}) - {{ bookinst.borrower }} - <a href="{% url 'renew-book-librarian' bookinst.id %}">Обновить книгу</a>
 				</li>
 				{% endfor %}
 		</ul>
