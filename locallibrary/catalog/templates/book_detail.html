@@ -2,6 +2,11 @@
 
 {% block content %}
   <h1>Название: {{ book.title }}</h1>
+  {% if perms.catalog.can_mark_returned %}
+    <a href="{% url 'book-update' book.id %}">Обновить информацию</a>
+    <a href="{% url 'book-delete' book.id %}">Удалить книгу</a>
+  {% endif %}
+
 
   <p><strong>Автор:</strong> <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
   <p><strong>Описание:</strong> {{ book.summary }}</p>

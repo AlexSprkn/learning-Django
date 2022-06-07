@@ -2,6 +2,9 @@
 
 {% block content %}
     <h1>Список авторов</h1>
+    {% if perms.catalog.can_mark_returned %}
+      <a href="{% url 'author-create' %}">Добавить автора</a>
+    {% endif %}
 
     {% if author_list %}
     <ul>

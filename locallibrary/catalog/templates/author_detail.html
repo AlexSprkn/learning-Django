@@ -3,6 +3,11 @@
 {% block content %}
   <h1>Автор: {{ author }}</h1>
   <p><strong>{{ author.date_of_birth }} - {{ author.date_of_death }}</p>
+  {% if perms.catalog.can_mark_returned %}
+    <a href="{% url 'author-update' author.id %}">Обновить информацию</a>
+    <a href="{% url 'author-delete' author.id %}">Удалить автора</a>
+  {% endif %}
+
   <div style="margin-left:20px;margin-top:20px">
     <h4>Книги</h4>
 
