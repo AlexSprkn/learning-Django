@@ -1,0 +1,1 @@
+__all__ = ['test_forms', 'test_models', 'test_views']
