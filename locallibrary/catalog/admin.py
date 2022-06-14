@@ -17,7 +17,6 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-#admin.site.register(Book)
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
 	list_display = ('title', 'author', 'display_genre')
@@ -27,7 +26,6 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Genre)
 
-#admin.site.register(BookInstance)
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
 	list_display = ('book', 'status', 'borrower', 'due_back', 'id')
